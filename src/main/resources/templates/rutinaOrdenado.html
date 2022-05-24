@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Lista de rutinas por id y por la descripcion</h3>
+
+	<table>
+		<tr>
+		
+		<th>Id</th>
+		<th></th>
+		<th>Descripcion</th>
+		<th></th>
+		<th>NombreInstructor</th>
+		<th></th>
+		<th>NombreSocio</th>
+		
+		</tr>
+
+		<tr th:each="user: ${listaOrder}">
+			<td th:text="${user.id}"></td>
+			<td></td>
+			<td th:text="${user.descripcion}"></td>
+			<td></td>
+			<td th:text="${user.instructor.nombre}"></td>
+			<td></td>
+			<td th:text="${user.socio.nombre}"></td>
+			
+			
+		</tr>
+	</table>
+
+
+</body>
+</html>

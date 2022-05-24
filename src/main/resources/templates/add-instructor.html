@@ -1,0 +1,200 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{addtitulo.ins}"> Registrar-Instructor</header><hr></hr>
+	<!---Form starting----> 
+	 <form action="#" th:action="@{/add_instructor}" th:object="${instructor}" method="post" enctype="multipart/form-data">
+	 <input type="hidden" id="agregarUrl" th:field=*{foto}>
+	<div class="row ">
+	 
+	 <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addcedula.ins}">cedula:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{cedula}"  id="cedula"  th:placeholder="#{addcedula.ins}" class="form-control ">
+		           
+             		<span th:if="${#fields.hasErrors('cedula')}" th:errors="*{cedula}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 <br>
+		 <br>
+		 <br>
+	 <!------->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addcedulare.ins}" >Cedula:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{numero_cedula}"  id="numero_cedula"  th:placeholder="#{addcedulare.ins}" class="form-control ">
+		           
+             		<div class="errorblock" th:if="${#fields.hasErrors('*')}">
+							<ul>
+								<li th:each="err : ${#fields.errors('*')}" class="text-danger"
+									th:text="${err}">Input is incorrect</li>
+							</ul>
+						</div>	
+             </div>
+		      </div>
+		 </div>
+		 <br>
+		 <br>
+		 <br>
+	 <!------->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addnombre.ins}">Nombre:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{nombre}"  id="nombre"  th:placeholder="#{addnombre.ins}" class="form-control ">
+		           
+             		<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+	 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="descripcion" class="firstname" th:text="#{addapellido.ins}">Apellido :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{apellido}"  id="apellido"  placeholder="apellido" class="form-control ">
+             		<span th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="hora" class="firstname" th:text="#{addcelular.ins}">Celular:</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{celular}"  id="celular"  th:placeholder="#{addcelular.ins}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('celular')}" th:errors="*{celular}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+	 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombre" class="firstname" th:text="#{addcontrasena.ins}">Contrasena:</label> </div>
+		           <div class="col-xs-8">
+		           <input type="password" th:field="*{contrasena}"  id="contrasena"  th:placeholder="#{addcontrasena.ins}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		  <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombre" class="firstname" th:text="#{addexperiencia.ins}">>Experiencia:</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{experiencia}"  id="experiencia"  th:placeholder="#{addexperiencia.ins}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('experiencia')}" th:errors="*{experiencia}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		
+         <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombre" class="firstname" th:text="#{addtitulacion.ins}">Titulacion:</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{titulacion}"  id="titulacion"  th:placeholder="#{addtitulacion.ins}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('titulacion')}" th:errors="*{titulacion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		  <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombre" class="firstname" th:text="#{addcorreo.ins}">Correo:</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{correo}"  id="correo"  th:placeholder="#{addcorreo.ins}" class="form-control ">
+             		<div class="errorblock" th:if="${#fields.hasErrors('*')}">
+							<ul>
+								<li th:each="err : ${#fields.errors('*')}" class="text-danger"
+									th:text="${err}">Input is incorrect</li>
+							</ul>
+						</div>
+             </div>
+		      </div>
+		 </div>
+		    <!------>
+         <div class="col-sm-12">
+         <br>
+            
+            
+             <div class="row">
+			     <div class="col-xs-4">
+          	      <label for="file-upload" class="subir btn btn-primary" th:text="#{addfotobtnins.ins}"></label> </div>
+		           <div class="col-xs-8">
+		           <input type="file" id="file-upload" accept="image/" class="form-control-file" style='display: none;' name="file">
+                    <span th:if="${#fields.hasErrors('foto')}" th:errors="{foto}" class="text-danger"></span>
+            
+            <div>
+            <img id="imcargar" src="/images/cargar.jpg" class="img-fluid rounded mt-2" style='width: 14rem; height: auto'>
+            </div>
+            
+             </div>
+		      </div>
+		      
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{addbtnins}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+	<!-- Fin del Footer -->
+	<!-- Scripts de JS de bootstrap  -->
+    <!-- (Orden) jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/subirImagen.js" th:src="@{/js/subirImagen.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>		
+</html>

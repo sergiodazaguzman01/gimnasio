@@ -1,0 +1,127 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Modificar Datos Bancarios</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{uptitulo.db}"> Modificar DatoBancario</header><hr></hr>
+	<!---Form starting----> 
+	<form action="#" th:action="@{/updateDatosbancario/{codigo}(codigo=${dt.codigo})}" th:object="${dt}" method="post">
+	<div class="row ">
+	
+		  
+		 
+	 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombreBanco" class="firstname" th:text="#{nombreBanco}">NombreBanco :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{nombreBanco}"  id="nombreBanco"  th:placeholder="#{nombreBanco}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('nombreBanco')}" th:errors="*{nombreBanco}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		
+        
+        
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="numeroCuenta" class="firstname" th:text="#{numeroCuenta}">numeroCuenta :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" readonly="readonly" th:field="*{numeroCuenta}"  id="numeroCuenta"  th:placeholder="#{numeroCuenta}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('numeroCuenta')}" th:errors="*{numeroCuenta}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+	 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="tipoCuenta" class="firstname" th:text="#{tipoCuenta}">TipoCuenta :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{tipoCuenta}"  id="tipoCuenta"  th:placeholder="#{tipoCuenta}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('tipoCuenta')}" th:errors="*{tipoCuenta}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+        
+         <!----
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="NombreSocio" class="firstname">NombreSocio :</label> </div>
+		           <div class="col-xs-8">
+		      <option value="Seleccionar" th:text="Seleccione"></option>
+				<option th:each="socio : ${socios}" th:value="${socio.numeroSocio}" th:text="${socio.nombre}">
+				</option>
+		       </div>
+		      </div>
+		 </div>
+		  
+		  
+		  <div class="form-group col-md-6">
+									<label for="categoria" class="col-form-label"
+										th:text="Seleccione-Socio"></label> <select
+										th:field="*{socio}" class="form-control">
+										<option value="Seleccionar" th:text="Seleccione"></option>
+				<option th:each="socio : ${socios}" th:value="${socio.numeroSocio}" th:text="${socio.nombre}">
+				</option>
+									</select>
+								</div>--->
+								
+								<!------->
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="socio" class="firstname" th:text="#{socio}" >Socio</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{socio.numeroSocio}" class="form-control" id="socio"  >
+                        <option th:each="socio : ${socios}" th:value="${socio.numeroSocio}"
+                        th:text="${socio.nombre}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('socio.numeroSocio')}" th:errors="*{socio.numeroSocio}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+		  
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{up}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+</body>		
+</html>

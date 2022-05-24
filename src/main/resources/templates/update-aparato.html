@@ -1,0 +1,132 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>RegistrarAparato</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{tituloupdate.aparato}"> Modificar-Aparato</header><hr></hr>
+	<!---Form starting----> 
+<form action="#" th:action="@{/updateAparato/{codigo}(codigo=${aparato.codigo})}" th:object="${aparato}" method="post" enctype="multipart/form-data">	
+		 <input type="hidden" id="agregarUrl" th:field="*{foto}" th:value="${aparato.foto}">
+            <input type="hidden" id="cambioUrl" name="cambioUrl" value="false">
+<div class="row ">
+	 <div class="row ">
+	
+ <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="codigo" class="firstname" th:text="#{codigo.aparato}">Codigo :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" readonly="readonly" th:field="*{codigo}"  id="codigo"  th:placeholder="#{codigo.aparato}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('codigo')}" th:errors="*{codigo}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+	 
+	 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="descripcion" class="firstname" th:text="#{descripcion.aparato}">Descripcion :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{descripcion}"  id="descripcion"  th:placeholder="#{descripcion.aparato}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="estadoConservacion" class="firstname" th:text="#{estadoconservacion.aparato}">estado Conservacion :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{estadoConservacion}"  id="estadoConservacion"  th:placeholder="#{estadoconservacion.aparato}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('estadoConservacion')}" th:errors="*{estadoConservacion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		
+		 <!------->
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="sala" class="firstname" th:text="#{seleccionesala.aparato}" >Sala</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{sala.numeroSala}" class="form-control" id="sala"  >
+                        <option th:each="sala : ${salas}" th:value="${sala.numeroSala}"
+                        th:text="${sala.nombreSala}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('sala.numeroSala')}" th:errors="*{sala.numeroSala}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+		<div class="row">
+		
+			     <div class="col-xs-4">
+          	      <label for="file-upload" class="subir btn btn-primary" th:text="#{btnfoto.aparto} "></label> </div>
+		           <div class="col-xs-8">
+		           <input type="file" id="file-upload" accept="image/" class="form-control-file" style='display: none;' name="file">
+                    <span th:if="${#fields.hasErrors('foto')}" th:errors="{foto}" class="text-danger"></span>
+            
+            <div>
+            <img id="imcargar" src="/images/cargar.jpg" class="img-fluid rounded mt-2" style='width: 14rem; height: auto'>
+            </div>
+            
+             </div>
+		      </div>
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{btnmodificatrs.aparato}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+	<!-- Scripts de JS de bootstrap  -->
+    <!-- (Orden) jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/subirImagen.js" th:src="@{/js/subirImagen.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>		
+</html>
+	
+
+	 
+	 

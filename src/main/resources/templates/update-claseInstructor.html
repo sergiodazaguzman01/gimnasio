@@ -1,0 +1,87 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>ModificarClaseInstructor</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{modificartitulo}"> Modificar-ClaseInstructor</header><hr></hr>
+	<!---Form starting----> 
+<form action="#" th:action="@{/updateClaseInstructor/{id}(id=${ci.id})}" th:object="${ci}" method="post">	<div class="row ">
+	<div class="row ">
+	 
+
+		  <!------->
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="instructor" class="firstname" th:text="#{nombreinstructor.clase}" >instructor</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{instructor.cedula}" class="form-control" id="instructor"  >
+                        <option th:each="instructor : ${instructores}" th:value="${instructor.cedula}"
+                        th:text="${instructor.nombre}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('instructor.cedula')}" th:errors="*{instructor.cedula}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+			<!------->
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="clase" class="firstname" th:text="#{nombrecalse.clase}" >Clase</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{clase.codigo}" class="form-control" id="clase"  >
+                        <option th:each="clase : ${clases}" th:value="${clase.codigo}"
+                        th:text="${clase.nombre}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('clase.codigo')}" th:errors="*{clase.codigo}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+
+			
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{modificarclase}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+</body>		
+</html>
+	
+
+	 
+	 

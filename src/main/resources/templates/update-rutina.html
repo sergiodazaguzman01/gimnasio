@@ -1,0 +1,155 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Editar Rutina</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{uptitulo.r}">Modificar Rutina</header><hr></hr>
+	<!---Form starting----> 
+ <form action="#" th:action="@{/updateRutina/{id}(id=${rutina.id})}" th:object="${rutina}" method="post" enctype="multipart/form-data">	
+	<input type="hidden" id="agregarUrl" th:field="*{foto}" th:value="${rutina.foto}">
+            <input type="hidden" id="cambioUrl" name="cambioUrl" value="false">
+	<div class="row ">
+	 
+	 
+	 
+	 <!------->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addnombre.ins}">Nombre:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{nombre}"  id="nombre"  th:placeholder="#{addnombre.ins}" class="form-control ">
+		           
+             		<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+	 <!------->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addescripcion}">Descripcion:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{descripcion}"  id="descripcion"  th:placeholder="#{addescripcion}" class="form-control ">
+		           
+             		<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		 <!------->
+	 
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addejercicios}">>Ejercicios:</label> </div>
+		           <div class="col-xs-8">
+		           
+		           <input type="text" th:field="*{ejercicios}"  id="ejercicios"  th:placeholder="#{addejercicios}" class="form-control ">
+		           
+             		<span th:if="${#fields.hasErrors('ejercicios')}" th:errors="*{ejercicios}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		  <!--  --> 
+<!-- ------------------- -->
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="instructor" class="firstname" th:text="#{seleccioneInstructor}" >Instructor</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{instructor.cedula}" class="form-control" id="instructor"  >
+                        <option th:each="instructor : ${instructores}" th:value="${instructor.cedula}"
+                        th:text="${instructor.nombre}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('instructor.cedula')}" th:errors="*{instructor.cedula}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								
+								</div>
+								</div>		
+			<!------------------------------------>
+			<!------->
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="socio" class="firstname" th:text="#{seleccioneSocio}" >Socio</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{socio.numeroSocio}" class="form-control" id="socio"  >
+                        <option th:each="socio : ${socios}" th:value="${socio.numeroSocio}"
+                        th:text="${socio.nombre}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('socio.numeroSocio')}" th:errors="*{socio.numeroSocio}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+			  <!------>
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	      <label for="file-upload" class="subir btn btn-primary" th:text="#{addfotobtnsocio.socio} "></label> </div>
+		           <div class="col-xs-8">
+		           <input type="file" id="file-upload" accept="image/" class="form-control-file" style='display: none;' name="file">
+                    <span th:if="${#fields.hasErrors('foto')}" th:errors="{foto}" class="text-danger"></span>
+            
+            <div>
+            <img id="imcargar" src="/images/cargar.jpg" class="img-fluid rounded mt-2" style='width: 14rem; height: auto'>
+            </div>
+            
+             </div>
+		      </div>
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{upbtn}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+	<!-- Fin del Footer -->
+	<!-- Scripts de JS de bootstrap  -->
+    <!-- (Orden) jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/subirImagen.js" th:src="@{/js/subirImagen.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>		
+</html>

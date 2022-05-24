@@ -1,0 +1,484 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>GYM SSJ</title>
+        <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" th:href="@{/css/styles.css}">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../img/navbar-logo.svg.jpeg" alt="" /></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars ml-1"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Servicios</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Clases</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" th:href="@{/login}" th:text="Login"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container">
+                <div class="masthead-subheading">Welcome To Our Gym SSJ!</div>
+                <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+                <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+            </div>
+        </header>
+        <!-- Services-->
+        <section class="page-section" id="services">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Servicios</h2>
+                    <h3 class="section-subheading text-muted">Sabemos que estás dispuesto a darlo todo para alcanzar tus metas. Conoce más servicios y complementa tu entrenamiento.</h3>
+                </div>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Planes flexibles que se adaptan a tu necesidad</h4>
+                        <p class="text-muted">Seas un principiante o experto tenemos diferentes configuraciones de planes y servicios en sede y virtuales que se adaptan a ti.</p>
+                        
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Coach nutricion virtual</h4>
+                        <p class="text-muted">Con el servicio de coach nutrición virtual estarás asesorado y aprenderás qué comer para alcanzar tus objetivos.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <span class="fa-stack fa-4x">
+                            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                            <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                        </span>
+                        <h4 class="my-3">Entrenador a domicilio</h4>
+                        <p class="text-muted">Recibe toda la motivación y asesoria de un profesional para alcanzar tus metas fisicas y de salud</p>
+                        <p class="text-muted">Podras crear el habito de entrenar gracias a tu entrenador Personal</p>
+                        <p class="text-muted">Podras mantener o subir tu novel de entrenamiento desde casa</p> </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio Grid-->
+        <section class="page-section bg-light" id="portfolio">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Clases</h2>
+                    <h3 class="section-subheading text-muted">Brindamos todo tipo de clases personalizadas o grupales.</h3>
+                </div>
+                
+                <div class="row">
+                    
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal1">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid"  alt="" src="https://cdn.ticbeat.com/src/uploads/2017/09/Errores-en-el-gimnasio.jpg" />
+                                
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">FUERZA Y TONO</div>
+                                <div class="portfolio-caption-subheading text-muted">Abdomen xp</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal2">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="https://keifit.com/wp-content/uploads/2018/08/Cardio-constante-o-intervalos_portada-1-640x379.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">CARDIO Y RITMOS</div>
+                                <div class="portfolio-caption-subheading text-muted">Cardio</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal3">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="https://img.freepik.com/foto-gratis/concepto-poder-fuerza-estilo-vida-saludable-deporte-potente-hombre-musculoso-atractivo-gimnasio_155003-4993.jpg?size=626&ext=jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">STRONG HOT</div>
+                                <div class="portfolio-caption-subheading text-muted">Crossfit</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-lg-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal4">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="https://www.ecestaticos.com/image/clipping/b713de0d41365e6f366b8569c31c61b9/opening.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">BODY AND MIND</div>
+                                <div class="portfolio-caption-subheading text-muted">Fitball</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6 mb-4 mb-sm-0">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal5">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/articulos/gluteos_acero_ejercicios_gimnasio.jpg" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">FUERZA Y TONO</div>
+                                <div class="portfolio-caption-subheading text-muted">Glúteo xp</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="portfolio-item">
+                            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal6">
+                                <div class="portfolio-hover">
+                                    <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                                </div>
+                                <img class="img-fluid" src="https://media.istockphoto.com/photos/diverse-group-of-people-at-a-rumba-lesson-in-the-gym-picture-id954755126?k=6&m=954755126&s=170667a&w=0&h=ZPmUVPyHyiY_R_xPSMp0c8HsMv6NE_NF4GjQPen2FwY=" alt="" />
+                            </a>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">CARDIO Y RITMOS</div>
+                                <div class="portfolio-caption-subheading text-muted">Rumba</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About-->
+        <section class="page-section" id="about">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">About</h2>
+                </div>
+                <ul class="timeline">
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../img/about/1.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Historia</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Historia: nace como una idea de proyecto de materia de la Institucion universitaria EAM, Colombia quienes se conocieron en el año 2020. Los estudiantes Sergio Guzman, Santiago Guzman y Stiven Jojoa, habían analizado la posibilidad de crear un lugar en donde a través del ejercicio se mejorara la calidad de vida de las personas y que además tuviera proximidad al lugar donde vivían o trabajaban. Luego de un minucioso estudio de mercadeo estructuraron, dentro de su proyecto de grado, la idea de el concepto de gimnasios, a Centros Médico Deportivos con un claro enfoque en salud</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../img/about/2.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Valores</h4>
+                            </div>
+                            <h6 class="subheading">Hacemos lo correcto:</h6>
+                            <div class="timeline-body"><p class="text-muted">-Tenemos actitud positiva.</p> 
+                             <div class="timeline-body"><p class="text-muted">-Vemos cada reto como una oportunidad.</p>
+                             <div class="timeline-body"><p class="text-muted">-Excedemos las expectativas de nuestros afiliados.</p> 
+                             <div class="timeline-body"><p class="text-muted">-Hacemos sentir bienvenidos a nuestros afiliados.</p> 
+                             <div class="timeline-body"><p class="text-muted">-Hacemos que nuestros afiliados se sientan únicos y especiales.</p> 
+                             <div class="timeline-body"><p class="text-muted">-Generamos soluciones rápidas y efectivas.</p> 
+                             <div class="timeline-body"><p class="text-muted">-Somos apasionados por GYMSSJ</p>  
+ 
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../img/about/3.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Propósito</h4>
+                            </div>
+                            <div class="timeline-body"><p class="text-muted">Transformar la vida de nuestros clientes a través del entrenamiento físico, haciendo que se sientan mejor, más fuertes y saludables, mejorando su autoestima y alcanzando sus sueños.</p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="../img/about/4.jpg" alt="" /></div>
+                        <div class="timeline-panel">
+                            <div class="timeline-heading">
+                                <h4 class="subheading">Sueño</h4>
+                            </div>
+                            <div class="timeline-body">Ser reconocidos por el cliente y la comunidad por ser el mejor y más profesional club de entrenamiento fitness y wellness de Latinoamérica.<p class="text-muted"></p></div>
+                        </div>
+                    </li>
+                    <li class="timeline-inverted">
+                        <div class="timeline-image">
+                            <h4>
+                                Se parte
+                                <br />
+                                De nuestra 
+                                <br />
+                                Historia!
+                            </h4>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!-- Team-->
+        <section class="page-section bg-light" id="team">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Equipo de desarrolladores</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="../images/tiago.jpg" alt="" />
+                            <h4>Santiago Guzman Daza</h4>
+                            <p class="text-muted">Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/santiago.guzmandaza"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/tiagoguzman/s"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="../images/sergio.jpg" alt="" />
+                            <h4>Sergio Guzman Daza</h4>
+                            <p class="text-muted">Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/sergio.guzmandaza"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/guzmanchecho/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="../images/jojoa.jpg" alt="" />
+                            <h4>Jhersson Stiven Jojoa</h4>
+                            <p class="text-muted">Developer</p>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.facebook.com/profile.php?id=100002268869222"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="https://www.instagram.com/jojoastiven19/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- Clients-->
+
+
+        <!-- Footer-->
+        <footer class="footer py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
+                    <div class="col-lg-4 my-3 my-lg-0">
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <div class="col-lg-4 text-lg-right">
+                        <a class="mr-3" href="#!">Privacy Policy</a>
+                        <a href="#!">Terms of Use</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Portfolio Modals-->
+        <!-- Modal 1-->
+        <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">FUERZA Y TONO</h2>
+                                    <p class="item-intro text-muted">Abdomen xp</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://cdn.ticbeat.com/src/uploads/2017/09/Errores-en-el-gimnasio.jpg" alt="" />
+                                    <p>los ejercicios abdominales son rutinas de actividades físicas que se realizan con el objetivo de tonificar los músculos de la zona. Antes de la tonificación, es necesario eliminar la grasa que recubre dichos músculos, a través del ejercicio aeróbico y de una alimentación saludable</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 2-->
+        <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">CARDIO Y RITMOS</h2>
+                                    <p class="item-intro text-muted">Cardio</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://keifit.com/wp-content/uploads/2018/08/Cardio-constante-o-intervalos_portada-1-640x379.jpg" alt="" />
+                                        <p>Los ejercicios cardiovasculares, mejor conocidos como cardio, son aquellos ejercicios que mejoran nuestra resistencia e incrementan nuestro ritmo cardiaco y nuestra respiración. La idea es esforzarnos hasta casi perder el aliento. De hecho, una buena sesión de cardio es exitosa cuando, en plena acción, no podemos pronunciar más de 5 o 6 palabras. Si podemos hablar normalmente, no estamos trabajando lo suficiente.</p>
+                                        <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 3-->
+        <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">STRONG HOT</h2>
+                                    <p class="item-intro text-muted">Crossfit</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://img.freepik.com/foto-gratis/concepto-poder-fuerza-estilo-vida-saludable-deporte-potente-hombre-musculoso-atractivo-gimnasio_155003-4993.jpg?size=626&ext=jpg" alt="" />
+                                    <p>CrossFit se define como un sistema de entrenamiento de fuerza y acondicionamiento basado en ejercicios funcionales constantemente variados realizados a una alta intensidad. </p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 4-->
+        <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">BODY AND MIND</h2>
+                                    <p class="item-intro text-muted">Fitball</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://www.ecestaticos.com/image/clipping/b713de0d41365e6f366b8569c31c61b9/opening.jpg" alt="" />
+                                    <p>El fitball es una pelota redonda, rellena de aire y de grandes dimensiones, muy utilizada frecuentemente en los gimnasios como método de tonificación y fortalecimiento muscular, especialmente de los abdominales y zona lumbar, además de otras funciones de las que hablaremos mas tarde, como ayudar a mejorar el equilibrio.</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 5-->
+        <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">FUERZA Y TONO</h2>
+                                    <p class="item-intro text-muted">Glúteo xp</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_image__small/public/articulos/gluteos_acero_ejercicios_gimnasio.jpg" alt="" />
+                                    <p>Para conseguir que tus glúteos y piernas aumenten, se debe entrenar con peso y con esto me refiero a pesas, barras con discos y máquinas. El peso que deberás tomar será el que te permita realizar una buena técnica, y a la vez no más de 8 a 12 repeticiones</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal 6-->
+        <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal"><img src="../img/close-icon.svg" alt="Close modal" /></div>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <div class="modal-body">
+                                    <!-- Project Details Go Here-->
+                                    <h2 class="text-uppercase">CARDIO Y RITMOS</h2>
+                                    <p class="item-intro text-muted">Rumba</p>
+                                    <img class="img-fluid d-block mx-auto" src="https://media.istockphoto.com/photos/diverse-group-of-people-at-a-rumba-lesson-in-the-gym-picture-id954755126?k=6&m=954755126&s=170667a&w=0&h=ZPmUVPyHyiY_R_xPSMp0c8HsMv6NE_NF4GjQPen2FwY=" alt="" />
+                                    <p>La rumba terapia es una nueva alternativa de moverse, hacer deporte y sudar, quemando calorías de una forma divertida y a bajo costo. Es una propuesta de baile y ritmo que se ha incorporado durante los dos últimos años, como un auge del deporte y quema de calorías en la mayoría de gimnasios</p>
+                                    <ul class="list-inline">
+                                    </ul>
+                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
+                                        <i class="fas fa-times mr-1"></i>
+                                        Close
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Third party plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <!-- Contact form JS-->
+        <script src="../mail/jqBootstrapValidation.js"></script>
+        <script src="../mail/contact_me.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>

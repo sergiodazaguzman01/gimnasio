@@ -1,0 +1,11 @@
+body,html {
+    background-image: url('https://userscontent2.emaze.com/images/c866ec57-8d9b-42a8-9a2d-4e40fdb6baf5/00ab7067-0b91-4864-85cf-ff1d10b3ec8c.jpg');
+    height: 100%;
+}
+
+#profile-img {
+    height:180px;
+}
+.h-80 {
+    height: 80% !important;
+}

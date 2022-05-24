@@ -1,0 +1,56 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{registrarclase}"> Registrar-SocioClase</header><hr></hr>
+	<!---Form starting----> 
+	 <form action="#" th:action="@{/add_socioClase}" th:object="${socioclase}" method="post">
+	<div class="row ">
+	 
+
+	 <div class="form-group col-md-6">
+									 <select
+										th:field="*{socio}" class="form-control">
+										<option th:value="Seleccionar" th:text="#{nombresocios}"></option>
+				<option th:each="sala : ${socios}" th:value="${sala.numeroSocio}" th:text="${sala.nombre}">
+				</option>
+									</select>
+								</div>
+	 
+		 <div class="form-group col-md-6">
+									 <select
+										th:field="*{clase}" class="form-control">
+										<option value="Seleccionar" th:text="#{nombrecalse.clase}"></option>
+				<option th:each="sala : ${clases}" th:value="${sala.codigo}" th:text="${sala.nombre}">
+				</option>
+									</select>
+								</div>
+	
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{botonagregars}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+</body>		
+</html>
+	

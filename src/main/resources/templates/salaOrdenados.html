@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Lista de Sala Ordenados por  Ubicacion</h3>
+
+	<table>
+		<tr>
+		
+		<th>NumeroSala</th>
+		<th>Ubicacion</th>
+		<th>Foto</th>
+		<th>MetroCuadrado</th>
+		<th>TieneAparatos</th>
+		</tr>
+
+		<tr th:each="user: ${listaOrder}">
+			<td th:text="${user.numeroSala}"></td>
+			<td th:text="${user.ubicacion}"></td>
+			<td th:text="${user.foto}"></td>
+			<td th:text="${user.metroCuadrado}"></td>
+			<td th:text="${user.tieneAparatos}"></td>
+			
+			
+		</tr>
+	</table>
+
+
+</body>
+</html>

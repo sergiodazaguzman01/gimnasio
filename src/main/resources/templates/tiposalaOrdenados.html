@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>Lista de TipoSala Ordenados por Nombre</h3>
+
+	<table>
+		<tr>
+		
+		<th>Nombre</th>
+		<th>Id</th>
+
+		</tr>
+
+		<tr th:each="user: ${listaOrder}">
+			<td th:text="${user.nombre}"></td>
+			<td th:text="${user.id}"></td>
+
+			
+			
+		</tr>
+	</table>
+
+
+</body>
+</html>

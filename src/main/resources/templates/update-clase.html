@@ -1,0 +1,126 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{uptitulo.c}"> Modificar Clase</header><hr></hr>
+	<!---Form starting----> 
+	 <form action="#" th:action="@{/updateClase/{codigo}(codigo=${clase.codigo})}" th:object="${clase}" method="post">
+	<div class="row ">
+
+	 <!------->
+      <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="dia" class="firstname" th:text="#{addia}">Dia :</label> </div>
+		           <div class="col-xs-8">
+
+             		<select	th:field="*{dia}" class="form-control">
+										<option value="Seleccionar" th:text="#{addia}"></option>
+										<option value="Lunes" th:text="('Lunes')"></option>
+										<option value="Martes" th:text="('Martes')"></option>
+										<option value="Miercoles" th:text="('Miercoles')"></option>
+										<option value="Jueves" th:text="('Jueves')"></option>
+										<option value="Viernes" th:text="('Viernes')"></option>
+										<option value="Sabado" th:text="('Sabado')"></option>
+										
+						</select>
+						<span th:if="${#fields.hasErrors('dia')}" th:errors="*{dia}" class="text-danger"></span>
+             </div>
+		      </div>
+	 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="descripcion" class="firstname" th:text="#{addescripcion}">Descripcion :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{descripcion}"  id="descripcion"  th:placeholder="#{addescripcion}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('descripcion')}" th:errors="*{descripcion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="hora" class="firstname" th:text="#{addhora}">Hora :</label> </div>
+		           <div class="col-xs-8">
+		        <!--    <input type="text" th:field="*{hora}"  id="hora"  placeholder="hora" class="form-control ">
+             		<span th:if="${#fields.hasErrors('hora')}" th:errors="*{hora}" class="text-danger"></span>	--> 
+             		<select	th:field="*{hora}" class="form-control">
+										<option value="Seleccionar" th:text="#{addhora}"></option>
+										<option value="07:00 AM - 09:00 AM" th:text="('07:00 AM - 09:00 AM')"></option>
+										<option value="09:00 AM - 11:00 AM" th:text="('09:00 AM - 11:00 AM')"></option>
+										<option value="11:00 AM - 01:00 PM" th:text="('11:00 AM - 01:00 PM')"></option>
+										<option value="01:00 PM - 02:00 PM" th:text="('01:00 PM - 02:00 PM')"></option>
+										<option value="02:00 PM - 03:00 PM" th:text="('02:00 PM - 03:00 PM')"></option>
+										<option value="03:00 PM - 05:00 PM" th:text="('03:00 PM - 05:00 PM')"></option>
+										<option value="05:00 PM - 07:00 PM" th:text="('05:00 PM - 07:00 PM')"></option>
+										<option value="08:00 PM - 10:00 PM" th:text="('08:00 PM - 10:00 PM')"></option>
+										
+						</select>
+						<span th:if="${#fields.hasErrors('hora')}" th:errors="*{hora}" class="text-danger"></span>
+             </div>
+		      </div>
+	 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombre" class="firstname" th:text="#{addnombre.ins}">Nombre :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{nombre}"  id="nombre" th:placeholder="#{addnombre.ins}"class="form-control ">
+             		<span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+
+			<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+                    <label for="sala" class="firstname" th:text="#{nombreSala}" >Sala</label>
+                     </div>
+                     <div class="col-xs-8">
+                      <select
+                       th:field="*{sala.numeroSala}" class="form-control" id="sala"  >
+                        <option th:each="sala : ${salas}" th:value="${sala.numeroSala}"
+                        th:text="${sala.nombreSala}" th:selected="false"/>
+                    </select>
+                    <span th:if="${#fields.hasErrors('sala.numeroSala')}" th:errors="*{sala.numeroSala}" class="text-danger"></span>
+                
+					</div>
+									<br>
+								<br>
+								<br>
+								</div>
+								</div>		
+			<!------------------------------------>
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{upbtn}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+</body>		
+</html>

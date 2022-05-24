@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Socios</title>
+</head>
+<body>
+	<h3>Lista de Socios Ordenados por Nombre</h3>
+
+	<table>
+		<tr>
+		
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Cedula</th>
+		<th>Celular</th>
+		<th>Contrasena</th>
+		<th>Foto</th>
+		<th>NumeroSocio</th>
+		</tr>
+
+		<tr th:each="user: ${listaOrder}">
+			<td th:text="${user.nombre}"></td>
+			<td th:text="${user.apellido}"></td>
+			<td th:text="${user.cedula}"></td>
+			<td th:text="${user.celular}"></td>
+			<td th:text="${user.contrasena}"></td>
+			<td th:text="${user.foto}"></td>
+			<td th:text="${user.numeroSocio}"></td>
+			
+		</tr>
+	</table>
+
+
+</body>
+</html>

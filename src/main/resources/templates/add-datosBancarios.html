@@ -1,0 +1,101 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Registration Form</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{uptitulo.db}" > Registrar DatoBancario</header><hr></hr>
+	<!---Form starting----> 
+	 <form action="#" th:action="@{/add_datosBancarios}" th:object="${datosbancario}" method="post">
+	<div class="row ">
+	 
+	 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombreBanco" class="firstname" th:text="#{nombreBanco}">NombreBanco :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{nombreBanco}"  id="nombreBanco"  th:placeholder="#{nombreBanco}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('nombreBanco')}" th:errors="*{nombreBanco}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		
+        
+        
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="numeroCuenta" class="firstname" th:text="#{numeroCuenta}">numeroCuenta :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{numeroCuenta}"  id="numeroCuenta"  th:placeholder="#{numeroCuenta}" class="form-control ">
+             		<div class="errorblock" th:if="${#fields.hasErrors('*')}">
+							<ul>
+								<li th:each="err : ${#fields.errors('*')}" class="text-danger"
+									th:text="${err}">Input is incorrect</li>
+							</ul>
+						</div>
+             </div>
+		      </div>
+		 </div>
+	 
+		 <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="tipoCuenta" class="firstname" th:text="#{tipoCuenta}">TipoCuenta :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{tipoCuenta}"  id="tipoCuenta"  th:placeholder= "#{tipoCuenta}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('tipoCuenta')}" th:errors="*{tipoCuenta}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+        
+<div class="col-sm-12"><br>
+		   <div class="row">
+		   <div class="col-xs-4">
+          	         <label for="sala" class="firstname" th:text="#{socio}"> :</label>
+          	          </div >		
+          	          <div class="col-xs-8">							
+
+			          <select th:field="*{socio}" class="form-control">
+	                  <option value="Seleccionar" th:text="#{nombreSocio}"></option>
+	  				  <option th:each="socio : ${socios}" th:value="${socio.numeroSocio}" th:text="${socio.nombre}">
+				
+									</select>
+									</div>
+								</div>
+								</div>
+		  
+
+
+		  
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{addbtnins}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+
+</body>		
+</html>

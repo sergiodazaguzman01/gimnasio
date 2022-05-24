@@ -1,0 +1,146 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<!Doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+     <meta charset="UTF-8">
+     <title>Modificar Sala</title>
+     	<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" th:href="@{/css/cssss.css}">
+</head>
+<body>
+ <div class="container">
+ <!---heading---->
+     <header class="heading" th:text="#{updatetitulo.sala}"> Modificar-Sala</header><hr></hr>
+	<!---Form starting----> 
+<form action="#" th:action="@{/updateSala/{numeroSala}(numeroSala=${sala.numeroSala})}" th:object="${sala}" method="post" enctype="multipart/form-data">
+	<input type="hidden" id="agregarUrl" th:field="*{foto}" th:value="${sala.foto}">
+            <input type="hidden" id="cambioUrl" name="cambioUrl" value="false">
+	
+	<div class="row ">
+	 
+	 
+	 
+	 <!------->
+                <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="numeroSala" class="firstname" th:text="#{numeroSala.sala}">Numero de Sala :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{numeroSala}" readonly="readonly" id="numeroSala"  th:placeholder="#{numeroSala.sala}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('numeroSala')}" th:errors="*{numeroSala}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		 <!------->
+       <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="nombreSala" class="firstname" th:text="#{nombresala.sala}">nombreSala :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{nombreSala}"  id="nombreSala"  th:placeholder="#{nombresala.sala}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('nombreSala')}" th:errors="*{nombreSala}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+
+ <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="metroCuadrado" class="firstname" th:text="#{metroscuadrado.sala}">Metros cuadrados :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{metroCuadrado}"  id="metroCuadrado"  th:placeholder="#{metroscuadrado.sala}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('metroCuadrado')}" th:errors="*{metroCuadrado}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		  <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="tieneAparatos" class="firstname" th:text="#{tieneaparatos.sala}">Tiene Aparato  :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{tieneAparatos}"  id="tieneAparatos"  th:placeholder="#{tieneaparatos.sala}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('tieneAparatos')}" th:errors="*{tieneAparatos}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		  <!------->
+         <div class="col-sm-12">
+         <br>
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label for="ubicacion" class="firstname" th:text="#{ubicacion.sala}">Ubicacion :</label> </div>
+		           <div class="col-xs-8">
+		           <input type="text" th:field="*{ubicacion}"  id="ubicacion"  th:placeholder="#{ubicacion.sala}" class="form-control ">
+             		<span th:if="${#fields.hasErrors('ubicacion')}" th:errors="*{ubicacion}" class="text-danger"></span>	
+             </div>
+		      </div>
+		 </div>
+		 
+		<!--  -->
+		
+		  <!------>
+         <div class="col-sm-12">
+         <br>
+            
+            
+             <div class="row">
+			     <div class="col-xs-4">
+          	      <label for="file-upload" class="subir btn btn-primary" th:text="#{addbtnimagen.sala} "></label> </div>
+		           <div class="col-xs-8">
+		           <input type="file" id="file-upload" accept="image/" class="form-control-file" style='display: none;' name="file">
+                    <span th:if="${#fields.hasErrors('foto')}" th:errors="{foto}" class="text-danger"></span>
+            
+            <div>
+            <img id="imcargar" src="/images/cargar.jpg" class="img-fluid rounded mt-2" style='width: 14rem; height: auto'>
+            </div>
+            
+             </div>
+		      </div>
+		 
+		
+     <!-----------For Button-------->
+         <div class="col-sm-12">
+		    <br>
+		     <div class="col-sm-12">
+		       <input type="submit" class="sbutton" 
+                                    th:value="#{btnmodificar.sala}">
+		   </div>
+		 </div>
+	 </div>	 
+	</form>		 
+		 
+</div>
+<!-- Fin del Footer -->
+	<!-- Scripts de JS de bootstrap  -->
+    <!-- (Orden) jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/subirImagen.js" th:src="@{/js/subirImagen.js}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+		integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+		integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+		crossorigin="anonymous"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+</body>		
+</html>
+	
+
+	 
+	 
